@@ -6,7 +6,7 @@
 
     users.anthony = {
       isNormalUser = true;
-      description = "Main User";
+      description = "Anthony";
       extraGroups = [ "networkmanager" "wheel" "input" ];
       packages = with pkgs; [];
     };
