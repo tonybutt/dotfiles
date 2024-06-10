@@ -4,5 +4,6 @@
     ./bluetooth.nix
     ./shells.nix
     ./users.nix
+    ./yubikey.nix
   ];
 }
