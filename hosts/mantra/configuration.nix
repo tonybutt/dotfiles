@@ -9,7 +9,10 @@
   
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
+  
+  boot.initrd.preLVMCommands = ''
+    ${pkgs.kbd}/bin/setleds +num 
+  '';
   boot.initrd.luks.devices."luks-cb6f0236-b018-4a02-8ec9-04f167a16abc".device = "/dev/disk/by-uuid/cb6f0236-b018-4a02-8ec9-04f167a16abc";
   
   networking.hostName = "mantra"; # Define your hostname.
@@ -34,7 +37,12 @@
 
   services.xserver = {	
     enable = true;
-    displayManager = { gdm.enable = true; };
+    displayManager = { 
+      gdm.enable = true;
+      setupCommands = ''
+        ${pkgs.numlockx}/bin/numlockx on
+      '';
+    };
     desktopManager = { gnome.enable = true; };
     xkb.layout = "us";
     xkb.variant = "";
@@ -53,6 +61,7 @@
   
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "anthony";
+  
   
   programs.firefox.enable = true;
 
