@@ -5,5 +5,6 @@
     ./shells.nix
     ./users.nix
     ./yubikey.nix
+    ./hyprland.nix
   ];
 }

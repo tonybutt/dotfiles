@@ -14,7 +14,16 @@
     ${pkgs.kbd}/bin/setleds +num 
   '';
   boot.initrd.luks.devices."luks-cb6f0236-b018-4a02-8ec9-04f167a16abc".device = "/dev/disk/by-uuid/cb6f0236-b018-4a02-8ec9-04f167a16abc";
-  
+  boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback.out ];
+  boot.kernelModules = [
+    # Virtual Camera
+    "v4l2loopback"
+    # Virtual Microphone
+    "snd-aloop"
+  ];
+  boot.extraModprobeConfig = ''
+    options v4l2loopback exclusive_caps=1 card_label="Virtual Camera"
+  '';
   networking.hostName = "mantra"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;
