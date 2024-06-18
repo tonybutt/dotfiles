@@ -6,5 +6,7 @@
     ./users.nix
     ./yubikey.nix
     ./hyprland.nix
+    ./security.nix
+    ./env.nix
   ];
 }
