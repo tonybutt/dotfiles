@@ -10,9 +10,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   
-  boot.initrd.preLVMCommands = ''
-    ${pkgs.kbd}/bin/setleds +num 
-  '';
   boot.initrd.luks.devices."luks-cb6f0236-b018-4a02-8ec9-04f167a16abc".device = "/dev/disk/by-uuid/cb6f0236-b018-4a02-8ec9-04f167a16abc";
   boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback.out ];
   boot.kernelModules = [
@@ -24,6 +21,13 @@
   boot.extraModprobeConfig = ''
     options v4l2loopback exclusive_caps=1 card_label="Virtual Camera"
   '';
+  boot.plymouth.enable = true;
+  boot.plymouth.theme = "breeze";
+  boot.initrd.verbose = false;
+  boot.initrd.systemd.enable = true;  
+  boot.consoleLogLevel = 0;
+  boot.kernelParams = [ "quiet" "udev.log_level=0" ];
+  
   networking.hostName = "mantra"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;
@@ -67,12 +71,6 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-  
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "anthony";
-  
-  
-  programs.firefox.enable = true;
 
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

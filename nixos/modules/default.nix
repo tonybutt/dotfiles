@@ -8,5 +8,6 @@
     ./hyprland.nix
     ./security.nix
     ./env.nix
+    ./sound.nix
   ];
 }

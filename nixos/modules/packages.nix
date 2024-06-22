@@ -21,6 +21,8 @@
     ranger
     seatd
     imv
+    brightnessctl
+    wttrbar
 
     # Notifications
     mako
@@ -35,6 +37,7 @@
     # Chat
     slack
     signal-desktop
+    discord
 
     # screenshot
     grim
@@ -57,24 +60,20 @@
     pipewire
     pulseaudio
     pamixer
-    
+    pavucontrol
+
     # Wallpaper manager 
     swww 
     
     # Launchers 
     dmenu
     rofi
-    wofi
     
     # Streaming Virtual Camera Stuff
     ffmpeg
     obs-studio
     amdvlk
     
-    # Other
-    libsForQt5.qtstyleplugin-kvantum
-    libsForQt5.qt5ct
-    papirus-nord
   ];
   fonts.packages = with pkgs; [
     jetbrains-mono

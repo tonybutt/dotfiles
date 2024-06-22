@@ -38,10 +38,10 @@
     };
 
     "custom/weather" = {
-        format = "{}";
+        format = "{}°";
         tooltip = true;
-        interval = 1800;
-        exec = "$HOME/.config/waybar/scripts/wttr.py";
+        interval = 3600;
+        exec = "wttrbar --fahrenheit --mph";
         return-type = "json";
     };
 
@@ -111,8 +111,8 @@
     };
 
     tray = {
-        icon-size = 16;
-        spacing = 0;
+        icon-size = 18;
+        spacing = 1;
     };
 
       };
@@ -122,15 +122,19 @@
       ''
 * {
     border: none;
+    border-radius: 0;
+    font-weight: bold;
     font-size: 14px;
     font-family: "JetBrainsMono Nerd Font,JetBrainsMono NF" ;
-    min-height: 25px;
+    min-height: 20px;
 }
 
 window#waybar {
   background: transparent;
-  margin: 5px;
  }
+window#waybar.hidden {
+  opacity: 0.2;
+}
 
 #custom-logo {
   padding: 0 10px;
