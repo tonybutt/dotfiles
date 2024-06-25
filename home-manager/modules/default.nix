@@ -7,5 +7,6 @@
     ./htop.nix
     ./wofi.nix
     ./hyprland.nix
+    ./mako.nix
   ];
 }

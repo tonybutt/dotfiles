@@ -2,7 +2,7 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      window.opacity = 0.95;
+      window.opacity = 0.85;
 
       font = {
         size = 13.0;
@@ -13,7 +13,7 @@
         };
       };
 
-      colors.primary.background = "#1d2021";
+      colors.primary.background = "#000000";
     };
   };
 }

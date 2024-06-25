@@ -24,9 +24,6 @@
     brightnessctl
     wttrbar
 
-    # Notifications
-    mako
-
     # Bluetooth
     bluez
     bluez-tools
@@ -74,6 +71,9 @@
     obs-studio
     amdvlk
     
+    #Zsh Theme
+    zsh-powerlevel10k
+    
   ];
   fonts.packages = with pkgs; [
     jetbrains-mono
@@ -83,6 +83,7 @@
     font-awesome
     powerline-fonts
     powerline-symbols
-    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+    meslo-lgs-nf
+    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" "FiraCode" ]; })
   ];
 }

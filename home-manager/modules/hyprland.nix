@@ -104,7 +104,9 @@
         render_ahead_of_time = false;
         disable_hyprland_logo = true;
       };
-
+      workspace = [
+        "special:spotify, on-created-empty:spotify"
+      ];
       windowrule = [
         "float, ^(imv)$"
         "float, ^(mpv)$"
@@ -112,13 +114,14 @@
 
       exec-once = [
         "$terminal"
-        "sww-daemon & sleep 0.1 & sww img ~/Downloads/black-hole.png"
+        "swww-daemon & sleep 0.1 & swww img ~/Downloads/G-YinYang.png"
         "waybar & brave"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
       ];
 
       bind = [
+        "$mainMod, Z, togglespecialworkspace, spotify"
         "$mainMod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
         "$mainMod, G, togglegroup"
         "$mainMod, Return, exec, alacritty"
