@@ -37,10 +37,10 @@
       };
 
       general = {
-        gaps_in = 2;
-        gaps_out = 10;
-        border_size = 2;
-        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        gaps_in = 5;
+        gaps_out = 15;
+        border_size = 5;
+        "col.active_border" = "rgba(47ff51d9) rgba(b5b5b5d9) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
 
         layout = "dwindle";

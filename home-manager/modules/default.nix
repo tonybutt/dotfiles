@@ -8,5 +8,6 @@
     ./wofi.nix
     ./hyprland.nix
     ./mako.nix
+    ./vscode.nix
   ];
 }
