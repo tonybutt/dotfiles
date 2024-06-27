@@ -9,5 +9,6 @@
     ./security.nix
     ./env.nix
     ./sound.nix
+    ./prune.nix
   ];
 }

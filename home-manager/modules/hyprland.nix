@@ -8,7 +8,9 @@
         "DP-3,2560x1440@143.91,auto,1"
         "HDMI-A-1,3840x2160@60,auto,1"
       ];
+      groupbar = {
 
+      };
       env = [
         "XDG_CURRENT_DESKTOP,Hyprland"
         "XDG_SESSION_TYPE,wayland"
@@ -17,6 +19,7 @@
         "HYPRCURSOR_SIZE,24"
         "QT_QPA_PLATFORM,wayland"
         "XDG_SCREENSHOTS_DIR,~/screens"
+        "GTK_THEME,Orchis-Dark-Compact"
       ];
 
       debug = {
@@ -37,9 +40,9 @@
       };
 
       general = {
-        gaps_in = 5;
+        gaps_in = 3;
         gaps_out = 15;
-        border_size = 5;
+        border_size = 2;
         "col.active_border" = "rgba(47ff51d9) rgba(b5b5b5d9) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
 
@@ -106,10 +109,12 @@
       };
       workspace = [
         "special:spotify, on-created-empty:spotify"
+        "special:obs, on-created-empty:obs"
       ];
       windowrule = [
         "float, ^(imv)$"
         "float, ^(mpv)$"
+        "move 0 -50,title:^(app.gather.town is sharing your screen.)$"
       ];
 
       exec-once = [
@@ -122,6 +127,7 @@
 
       bind = [
         "$mainMod, Z, togglespecialworkspace, spotify"
+        "$mainMod, O, togglespecialworkspace, obs"
         "$mainMod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
         "$mainMod, G, togglegroup"
         "$mainMod, Return, exec, alacritty"
@@ -132,6 +138,7 @@
         "$mainMod, SPACE, exec, wofi --show drun"
         "$mainMod, P, pseudo, # dwindle"
         "$mainMod, S, togglesplit, # dwindle"
+        ",F11,fullscreen"
 
         # Move focus with mainMod + arrow keys
         "$mainMod, h, movefocus, l"

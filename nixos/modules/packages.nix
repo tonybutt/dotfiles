@@ -2,14 +2,17 @@
   nixpkgs.config = {
     allowUnfree = true;
   };
-
+  programs.wshowkeys.enable = true;
   environment.systemPackages = with pkgs; [
+    # Notifications
+    glib
+    libnotify
+    
     # Editors
     vim
     
     # Coding
     git
-    screenkey
 
     # Music
     spotify
@@ -23,6 +26,7 @@
     imv
     brightnessctl
     wttrbar
+    wallust
 
     # Bluetooth
     bluez

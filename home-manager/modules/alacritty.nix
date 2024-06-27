@@ -2,7 +2,9 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      window.opacity = 0.85;
+      import = [
+        "~/.cache/wal/colors-alacritty.toml"
+      ];
 
       font = {
         size = 13.0;
