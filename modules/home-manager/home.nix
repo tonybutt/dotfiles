@@ -1,7 +1,7 @@
 {
   imports = [
     ./zsh.nix
-    ./modules/default.nix
+    ./default.nix
   ];
 
   home = {

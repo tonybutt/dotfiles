@@ -8,9 +8,7 @@
         "DP-3,2560x1440@143.91,auto,1"
         "HDMI-A-1,3840x2160@60,auto,1"
       ];
-      groupbar = {
-
-      };
+    
       env = [
         "XDG_CURRENT_DESKTOP,Hyprland"
         "XDG_SESSION_TYPE,wayland"

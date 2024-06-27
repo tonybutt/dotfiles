@@ -28,8 +28,8 @@
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.anthony = import ./home-manager/home.nix;
-	  }
+            home-manager.users.anthony = import ./modules/home-manager/home.nix;
+	        }
         ];
       };
     }; 
