@@ -22,7 +22,10 @@
   
     plugins = {
       telescope.enable = true;
-      treesitter.enable = true;
+      treesitter = {
+        enable = true;
+        gccPackage = pkgs.gcc;
+      };
       luasnip.enable = true;
       lightline.enable = true;
       lsp = {
