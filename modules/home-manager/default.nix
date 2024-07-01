@@ -12,6 +12,8 @@ with lib;
     ./mako.nix
     ./vscode.nix
     ./hyprlock.nix
+    ./nixvim.nix
+    ./hypridle.nix
   ];
 
   alacritty.enable = mkDefault true;

@@ -1,11 +1,12 @@
 {
+  services.hyprpaper.enable = true;
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
       "$mainMod" = "SUPER";
 
       monitor = [
-        "DP-3,2560x1440@143.91,auto,1"
+        "DP-3,2560x1440@60,auto,1"
         "HDMI-A-1,3840x2160@60,auto,1"
       ];
 
@@ -17,7 +18,6 @@
         "HYPRCURSOR_SIZE,24"
         "QT_QPA_PLATFORM,wayland"
         "XDG_SCREENSHOTS_DIR,~/screens"
-        "GTK_THEME,Orchis-Dark-Compact"
       ];
 
       debug = {
@@ -41,8 +41,6 @@
         gaps_in = 3;
         gaps_out = 15;
         border_size = 2;
-        "col.active_border" = "rgba(47ff51d9) rgba(b5b5b5d9) 45deg";
-        "col.inactive_border" = "rgba(595959aa)";
 
         layout = "dwindle";
       };
@@ -60,7 +58,6 @@
         drop_shadow = true;
         shadow_range = 4;
         shadow_render_power = 3;
-        "col.shadow" = "rgba(1a1a1aee)";
       };
 
       animations = {
@@ -99,6 +96,7 @@
         render_ahead_of_time = false;
         disable_hyprland_logo = true;
       };
+      
       workspace = [
         "special:spotify, on-created-empty:spotify"
         "special:obs, on-created-empty:obs"
@@ -110,8 +108,7 @@
       ];
 
       exec-once = [
-        "$terminal"
-        "swww-daemon & sleep 0.1 & swww img ~/Downloads/G-YinYang.png"
+        "hyprpaper"
         "waybar & brave"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"

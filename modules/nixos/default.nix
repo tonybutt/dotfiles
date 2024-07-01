@@ -15,5 +15,6 @@
     ./printing.nix
     ./greetd.nix
     ./nh.nix
+    ./stylix.nix
   ];
 }

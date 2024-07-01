@@ -7,15 +7,21 @@
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixvim = {
+      url = "github:nix-community/nixvim/nixos-24.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    stylix.url = "github:danth/stylix";
   };
 
   outputs =
-    inputs@{
+    {
       self,
       nixpkgs,
       home-manager,
+      nixvim,
       ...
-    }:
+    }@inputs:
     let
       system = "x86_64-linux";
     in
@@ -37,7 +43,11 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.anthony = import ./hosts/mantra/home.nix;
+              home-manager.sharedModules = [
+                nixvim.homeManagerModules.nixvim
+              ];
             }
+            inputs.stylix.nixosModules.stylix
           ];
         };
       };

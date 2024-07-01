@@ -27,7 +27,6 @@
     imv
     brightnessctl
     wttrbar
-    wallust
 
     # Bluetooth
     bluez
@@ -59,12 +58,12 @@
     pamixer
     pavucontrol
 
-    # Wallpaper manager
-    swww
-
     # Launchers
     dmenu
+    nwg-look
 
+    qt5ct
+    qt6ct
     # Streaming Virtual Camera Stuff
     ffmpeg
     obs-studio

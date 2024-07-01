@@ -31,13 +31,11 @@ with lib;
 
       userSettings = {
         "files.autoSave" = "afterDelay";
-        "editor.fontFamily" = "Fira Code";
         "editor.fontLigatures" = true;
         "nix.enableLanguageServer" = true;
         "nix.serverPath" = "nil";
         "window.menuBarVisibility" = "hidden";
         "liveshare.languages.allowGuestCommandControl" = true;
-        "workbench.colorTheme" = "Wal";
       };
     };
   };

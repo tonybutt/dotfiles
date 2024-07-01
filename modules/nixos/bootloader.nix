@@ -20,12 +20,11 @@ with lib;
       (strings.optionalString config.virtualMicrophone.enable "snd-aloop")
     ];
     boot.extraModprobeConfig = strings.concatStrings [
-      (strings.optionalString config.virtualCamera.enable "options v4l2loopback exclusive_caps=1 card_label='Virtual Camera'")
+      (strings.optionalString config.virtualCamera.enable ''options v4l2loopback exclusive_caps=1 card_label="Virtual Camera"'')
       (strings.optionalString config.virtualMicrophone.enable "\noptions snd_usb_audio vid=0x1235 pid=0x8212 device_setup=1")
     ];
 
     boot.plymouth.enable = true;
-    boot.plymouth.theme = "breeze";
     boot.initrd.verbose = false;
     boot.initrd.systemd.enable = true;
     boot.consoleLogLevel = 0;
