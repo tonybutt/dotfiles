@@ -1,16 +1,17 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   nixpkgs.config = {
     allowUnfree = true;
   };
-  programs.wshowkeys.enable = true;
+  programs.appgate-sdp.enable = true;
   environment.systemPackages = with pkgs; [
     # Notifications
     glib
     libnotify
-    
+
     # Editors
     vim
-    
+
     # Coding
     git
 
@@ -31,10 +32,7 @@
     # Bluetooth
     bluez
     bluez-tools
-    
-    # Terminals
-    alacritty
-    
+
     # Chat
     slack
     signal-desktop
@@ -46,38 +44,31 @@
     slurp
     flameshot
     swappy
- 
-    # Clipboard 
+
+    # Clipboard
     wl-clipboard
     cliphist
 
     # Window Manager
     waybar
-    xwayland
     hyprland
-    xdg-desktop-portal-hyprland 
-    
+
     # Sound
     pipewire
     pulseaudio
     pamixer
     pavucontrol
 
-    # Wallpaper manager 
-    swww 
-    
-    # Launchers 
+    # Wallpaper manager
+    swww
+
+    # Launchers
     dmenu
-    rofi
-    
+
     # Streaming Virtual Camera Stuff
     ffmpeg
     obs-studio
     amdvlk
-    
-    #Zsh Theme
-    zsh-powerlevel10k
-    
   ];
   fonts.packages = with pkgs; [
     jetbrains-mono
@@ -88,6 +79,11 @@
     powerline-fonts
     powerline-symbols
     meslo-lgs-nf
-    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" "FiraCode" ]; })
+    (nerdfonts.override {
+      fonts = [
+        "NerdFontsSymbolsOnly"
+        "FiraCode"
+      ];
+    })
   ];
 }

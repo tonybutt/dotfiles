@@ -1,3 +1,5 @@
+{ lib, ... }:
+with lib;
 {
   imports = [
     ./git.nix
@@ -9,5 +11,15 @@
     ./hyprland.nix
     ./mako.nix
     ./vscode.nix
+    ./hyprlock.nix
   ];
+
+  alacritty.enable = mkDefault true;
+  brave.enable = mkDefault true;
+  git.enable = mkDefault true;
+  htop.enable = mkDefault true;
+  vscode.enable = mkDefault true;
+  wofi.enable = mkDefault true;
+  mako.enable = mkDefault true;
+  zsh.enable = mkDefault true;
 }

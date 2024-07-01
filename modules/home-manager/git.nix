@@ -1,15 +1,35 @@
+{ lib, config, ... }:
+with lib;
 {
-  programs.git = {
-    enable = true;
-    userName = "Anthony Butt";
-    userEmail = "anthony@abutt.io";
-    signing = { 
-      key = "4C66EAE99B0950AAEED2133CF56C1FE0C44B03BE";
-      signByDefault = true;
-      gpgPath = "gpg";
+  options = {
+    git.enable = mkEnableOption "enables git";
+    git.userName = mkOption {
+      type = types.str;
+      default = "";
     };
-    extraConfig = {
-      init.defaultBranch = "main";
+    git.email = mkOption {
+      type = types.str;
+      default = "";
+    };
+    git.signingKey = mkOption {
+      type = types.str;
+      default = "";
+    };
+  };
+
+  config = mkIf config.git.enable {
+    programs.git = {
+      enable = true;
+      userName = config.git.userName;
+      userEmail = config.git.email;
+      signing = {
+        key = config.git.signingKey;
+        signByDefault = true;
+        gpgPath = "gpg";
+      };
+      extraConfig = {
+        init.defaultBranch = "main";
+      };
     };
   };
 }

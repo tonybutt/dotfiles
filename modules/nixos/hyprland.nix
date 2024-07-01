@@ -1,3 +1,8 @@
+{ lib, config, ... }:
+with lib;
 {
-  programs.hyprland.enable = true;
+  options = {
+    hyprland.enable = mkEnableOption "enables system hyprland";
+  };
+  config = mkIf config.hyprland.enable { programs.hyprland.enable = true; };
 }

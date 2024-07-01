@@ -8,7 +8,7 @@
         "DP-3,2560x1440@143.91,auto,1"
         "HDMI-A-1,3840x2160@60,auto,1"
       ];
-    
+
       env = [
         "XDG_CURRENT_DESKTOP,Hyprland"
         "XDG_SESSION_TYPE,wayland"
@@ -45,8 +45,6 @@
         "col.inactive_border" = "rgba(595959aa)";
 
         layout = "dwindle";
-
-        no_cursor_warps = false;
       };
 
       decoration = {
@@ -84,10 +82,6 @@
       dwindle = {
         pseudotile = true; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
         preserve_split = true; # you probably want this
-      };
-
-      master = {
-        new_is_master = true;
       };
 
       gestures = {
@@ -197,7 +191,7 @@
         ", XF86AudioLowerVolume, exec, pamixer -d 5 "
         ", XF86AudioMute, exec, pamixer -t"
         ", XF86AudioMicMute, exec, pamixer --default-source -m"
-        
+
         # Brightness control
         ", XF86MonBrightnessDown, exec, brightnessctl set 5%- "
         ", XF86MonBrightnessUp, exec, brightnessctl set +5% "
@@ -216,7 +210,7 @@
       bindm = [
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
-      ];    
+      ];
     };
   };
 }

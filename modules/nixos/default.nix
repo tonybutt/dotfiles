@@ -9,6 +9,11 @@
     ./security.nix
     ./env.nix
     ./sound.nix
-    ./prune.nix
+    ./network.nix
+    ./bootloader.nix
+    ./xserver.nix
+    ./printing.nix
+    ./greetd.nix
+    ./nh.nix
   ];
 }

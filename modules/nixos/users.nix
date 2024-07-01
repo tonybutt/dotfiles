@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.zsh.enable = true;
 
   users = {
@@ -7,11 +8,11 @@
     users.anthony = {
       isNormalUser = true;
       description = "Anthony";
-      extraGroups = [ "networkmanager" "wheel" "input" ];
-      packages = with pkgs; [];
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+        "input"
+      ];
     };
   };
-
-  # Enable automatic login for the user.
-  services.getty.autologinUser = "anthony";
 }

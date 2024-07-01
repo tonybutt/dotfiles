@@ -1,6 +1,19 @@
-{pkgs, ...}: {
-    environment.systemPackages = [pkgs.alsa-scarlett-gui];
-    boot.extraModprobeConfig = ''
-      options snd_usb_audio vid=0x1235 pid=0x8212 device_setup=1
-    '';
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+with lib;
+{
+  environment.systemPackages = mkIf config.virtualMicrophone.enable [ pkgs.alsa-scarlett-gui ];
+
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
 }
