@@ -9,7 +9,8 @@ with lib;
   config = {
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
-
+    services.passSecretService.enable = true;
+    programs.seahorse.enable = true;
     boot.extraModulePackages = mkIf config.virtualCamera.enable [
       config.boot.kernelPackages.v4l2loopback.out
     ];

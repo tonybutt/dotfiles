@@ -15,6 +15,7 @@
     # Coding
     git
     gcc
+    zola
 
     # Music
     spotify
@@ -22,8 +23,6 @@
 
     # Utils
     tree
-    neofetch
-    ranger
     seatd
     imv
     brightnessctl
@@ -38,7 +37,7 @@
     signal-desktop
     discord
 
-    # screenshot
+    # Screenshot
     grim
     grimblast
     slurp
@@ -61,10 +60,14 @@
 
     # Launchers
     dmenu
-    nwg-look
 
+    # GTK Themes
+    nwg-look
+    
+    # Qt App Theming
     qt5ct
     qt6ct
+
     # Streaming Virtual Camera Stuff
     ffmpeg
     obs-studio

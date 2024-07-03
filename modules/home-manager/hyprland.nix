@@ -109,6 +109,7 @@
 
       exec-once = [
         "hyprpaper"
+        "hypridle"
         "waybar & brave"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"

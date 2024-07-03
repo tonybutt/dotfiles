@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ pkgs, lib, config, ... }:
 with lib;
 {
   options = {
@@ -19,6 +19,7 @@ with lib;
 
   config = mkIf config.git.enable {
     programs.git = {
+      package = pkgs.gitFull;
       enable = true;
       userName = config.git.userName;
       userEmail = config.git.email;
@@ -28,7 +29,9 @@ with lib;
         gpgPath = "gpg";
       };
       extraConfig = {
+        core.askPass = "";
         init.defaultBranch = "main";
+        credential.helper = "${pkgs.gitFull.override {withLibsecret = true;}}/bin/git-credential-libsecret";
       };
     };
   };

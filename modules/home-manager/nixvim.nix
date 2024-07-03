@@ -25,6 +25,7 @@
       treesitter = {
         enable = true;
         gccPackage = pkgs.gcc;
+        indent = true;
       };
       luasnip.enable = true;
       lightline.enable = true;

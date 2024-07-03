@@ -14,6 +14,8 @@ with lib;
     ./hyprlock.nix
     ./nixvim.nix
     ./hypridle.nix
+    ./fastfetch.nix
+    ./yazi.nix
   ];
 
   alacritty.enable = mkDefault true;
