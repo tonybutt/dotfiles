@@ -16,8 +16,14 @@ with lib;
       default = "";
     };
   };
-
+  
   config = mkIf config.git.enable {
+    home.file.".config/git/.2F-config" = {
+      text = ''
+      [user]
+      email = "anthony.butt@secondfront.com"
+      '';
+    };
     programs.git = {
       package = pkgs.gitFull;
       enable = true;
@@ -28,10 +34,16 @@ with lib;
         signByDefault = true;
         gpgPath = "gpg";
       };
+      includes = [
+        {
+          condition = "hasconfig:remote.*.url:https://code.il2.gamewarden.io*/**";
+          path = "~/.config/git/.2F-config";
+        }
+      ];
       extraConfig = {
         core.askPass = "";
         init.defaultBranch = "main";
-        credential.helper = "${pkgs.gitFull.override {withLibsecret = true;}}/bin/git-credential-libsecret";
+        credential.helper = "store";
       };
     };
   };

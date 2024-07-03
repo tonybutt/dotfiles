@@ -7,5 +7,6 @@
     opacity = {
       terminal = 0.65;
     };
+    targets.plymouth.logo = ../../assets/buttcheeks.png;
   };
 }
