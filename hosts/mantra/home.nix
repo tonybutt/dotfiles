@@ -16,7 +16,7 @@ with lib;
         username = strings.toLower firstName;
         homeDirectory = strings.toLower "/home/${firstName}";
         stateVersion = "24.05";
-        packages = with pkgs; [ jq ];
+        packages = with pkgs; [ jq sops ];
       };
 
       git = {
