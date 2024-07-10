@@ -56,6 +56,7 @@ with lib;
           "git"
           "sudo"
           "z"
+          "direnv"
         ];
       };
     };

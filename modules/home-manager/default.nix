@@ -16,6 +16,7 @@ with lib;
     ./hypridle.nix
     ./fastfetch.nix
     ./yazi.nix
+    ./direnv.nix
   ];
 
   alacritty.enable = mkDefault true;

@@ -27,6 +27,7 @@ with lib;
         eamodio.gitlens
         ms-python.python
         jnoortheen.nix-ide
+        golang.go
       ];
 
       userSettings = {
@@ -36,6 +37,7 @@ with lib;
         "nix.serverPath" = "nil";
         "window.menuBarVisibility" = "hidden";
         "liveshare.languages.allowGuestCommandControl" = true;
+        "workbench.sideBar.location" = "right";
       };
     };
   };

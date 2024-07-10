@@ -16,6 +16,8 @@
     git
     gcc
     zola
+    go
+    rustup
 
     # Music
     spotify

@@ -22,6 +22,7 @@ with lib;
       text = ''
       [user]
       email = "anthony.butt@secondfront.com"
+      name = "cheeks"
       '';
     };
     programs.git = {
