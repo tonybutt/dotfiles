@@ -452,7 +452,8 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
-        "stylix": "stylix"
+        "stylix": "stylix",
+        "zed-pkgs": "zed-pkgs"
       }
     },
     "stylix": {
@@ -516,6 +517,22 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "zed-pkgs": {
+      "locked": {
+        "lastModified": 1720758494,
+        "narHash": "sha256-Sco8A4d2p1TTaHFyMMtk6LCkG7gU+g3eIN8+4PsEGkw=",
+        "owner": "bbigras",
+        "repo": "nixpkgs",
+        "rev": "eeac2fb3862409f409eaf112ca80c29517a8813c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "bbigras",
+        "ref": "zed-editor",
+        "repo": "nixpkgs",
         "type": "github"
       }
     }

@@ -1,5 +1,4 @@
-{ pkgs, lib, ... }:
-with lib;
+{ pkgs, zed-pkgs, lib, ... }:
 {
   imports = [
     ../../modules/home-manager/zsh.nix
@@ -10,18 +9,26 @@ with lib;
     let
       firstName = "Anthony";
       lastName = "Butt";
+      zed-fhs = zed-pkgs.buildFHSUserEnv {
+        name = "zed";
+        targetPkgs = pkgs:
+          with zed-pkgs; [
+            zed-editor
+          ];
+        runScript = "zed";
+      };
     in
     {
       home = {
-        username = strings.toLower firstName;
-        homeDirectory = strings.toLower "/home/${firstName}";
+        username = lib.strings.toLower firstName;
+        homeDirectory = lib.strings.toLower "/home/${firstName}";
         stateVersion = "24.05";
-        packages = with pkgs; [ jq sops ];
+        packages = [ pkgs.jq pkgs.sops zed-fhs pkgs.pulumi-bin ];
       };
 
       git = {
         enable = true;
-        userName = strings.concatStrings [
+        userName = lib.strings.concatStrings [
           "${firstName}"
           " ${lastName}"
         ];

@@ -18,6 +18,7 @@
         "HYPRCURSOR_SIZE,24"
         "QT_QPA_PLATFORM,wayland"
         "XDG_SCREENSHOTS_DIR,~/screens"
+        "AMD_VULKAN_ICD, RADV"
       ];
 
       debug = {
@@ -96,7 +97,7 @@
         render_ahead_of_time = false;
         disable_hyprland_logo = true;
       };
-      
+
       workspace = [
         "special:spotify, on-created-empty:spotify"
         "special:obs, on-created-empty:obs"
@@ -105,6 +106,11 @@
         "float, ^(imv)$"
         "float, ^(mpv)$"
         "move 0 -50,title:^(app.gather.town is sharing your screen.)$"
+      ];
+      windowrulev2 = [
+        "float,title:^()$,class:^(dev.zed.Zed)$"
+        "size 20% 20%,title:^()$,class:(dev.zed.Zed)"
+        "move 0 0,title:^()$,class:(dev.zed.Zed)"
       ];
 
       exec-once = [

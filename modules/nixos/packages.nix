@@ -9,6 +9,8 @@
     glib
     libnotify
 
+
+
     # Editors
     vim
 
@@ -18,6 +20,12 @@
     zola
     go
     rustup
+    rustc
+    rustPackages.clippy
+    rust-analyzer
+    rustfmt
+    cargo
+    nixd
 
     # Music
     spotify
@@ -53,6 +61,7 @@
     # Window Manager
     waybar
     hyprland
+    xdg-desktop-portal-hyprland
 
     # Sound
     pipewire
@@ -65,7 +74,7 @@
 
     # GTK Themes
     nwg-look
-    
+
     # Qt App Theming
     qt5ct
     qt6ct

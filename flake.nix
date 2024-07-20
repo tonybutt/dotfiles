@@ -2,6 +2,9 @@
   description = "My system configs";
 
   inputs = {
+    zed-pkgs = {
+      url = "github:bbigras/nixpkgs/zed-editor";
+    };
     nixpkgs.url = "nixpkgs/nixos-24.05";
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
@@ -20,6 +23,7 @@
       nixpkgs,
       home-manager,
       nixvim,
+      zed-pkgs,
       ...
     }@inputs:
     let
@@ -40,6 +44,12 @@
             ./hosts/mantra/configuration.nix
             home-manager.nixosModules.home-manager
             {
+              home-manager.extraSpecialArgs = {
+                zed-pkgs = import zed-pkgs {
+                  inherit system;
+                  config.allowUnfree = true;
+                };
+              };
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.anthony = import ./hosts/mantra/home.nix;

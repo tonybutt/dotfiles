@@ -1,4 +1,4 @@
-{ ... }:
+{pkgs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -7,7 +7,10 @@
   boot.initrd.luks.devices."luks-cb6f0236-b018-4a02-8ec9-04f167a16abc".device = "/dev/disk/by-uuid/cb6f0236-b018-4a02-8ec9-04f167a16abc";
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";
-
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+  };
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
     LC_IDENTIFICATION = "en_US.UTF-8";

@@ -4,13 +4,12 @@
   config,
   ...
 }:
-with lib;
 {
   options = {
-    vscode.enable = mkEnableOption "enables vscode";
+    vscode.enable = lib.mkEnableOption "enables vscode";
   };
 
-  config = mkIf config.vscode.enable {
+  config = lib.mkIf config.vscode.enable {
     # Install nix LSP nil
     home.packages = [ pkgs.nil ];
 
